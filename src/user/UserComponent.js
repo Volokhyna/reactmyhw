@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import {usersWithAddress} from "../users1";
+import './Userstyle.css';
 
 class UserComponent extends Component {
     render() {
-        let {item} = this.props
+        let {item, cls} = this.props
         return (
             <div>
-                <div>{item.name} - {item.status.toString()} - {item.id} - {item.city} - {item.street} - {item.number} </div>
+                <div className={cls}> {item.name} - {item.status.toString()} - {item.id} - {item.city} - {item.street} - {item.number} </div>
             </div>
         )
     }

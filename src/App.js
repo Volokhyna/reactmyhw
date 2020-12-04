@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {users, usersWithAddress} from "./users1";
+import {usersWithAddress} from "./users1";
 import UserComponent from "./user/UserComponent";
 
 class App extends Component {
@@ -7,7 +7,14 @@ class App extends Component {
         return (
             <div>
                 {
-                    usersWithAddress.map(user => (<UserComponent item = {user}/>))
+                    usersWithAddress.map((user, index) => {
+                        let clsX = user.id%2 ? 'even' : 'odd';
+                        return (
+                            <UserComponent
+                                item={user}
+                                cls={clsX}
+                                key={index}/>);
+                    })
                 }
             </div>
         );
